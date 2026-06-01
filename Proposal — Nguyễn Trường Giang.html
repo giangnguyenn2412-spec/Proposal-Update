@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)file:///C:/Users/Windows%2010/Downloads/test/Proposal_Updated_Leader_Roadmap%20(1).html -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal — Nguyễn Trường Giang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Proposal — Nguyễn Trường Giang_files/css2" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f1e8;
+      --paper:#fffaf0;
+      --ink:#111111;
+      --muted:#746f66;
+      --line:rgba(17,17,17,.14);
+      --soft-line:rgba(17,17,17,.08);
+      --accent:#ff4f2e;
+      --accent-2:#d6ff38;
+      --accent-3:#8f7bff;
+      --accent-4:#00c2ff;
+      --dark:#0d0d0f;
+      --white:#ffffff;
+      --shadow:0 28px 90px rgba(0,0,0,.14);
+      --radius:28px;
+      --font-display:'Space Grotesk', system-ui, sans-serif;
+      --font-body:'Inter', system-ui, sans-serif;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      min-height:100vh;
+      font-family:var(--font-body);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(214,255,56,.32), transparent 30%),
+        radial-gradient(circle at 80% 8%, rgba(143,123,255,.28), transparent 30%),
+        linear-gradient(180deg, #f8f3e9 0%, #efe9dc 52%, #f6f1e8 100%);
+      color:var(--ink);
+      overflow-x:hidden;
+      line-height:1.55;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;z-index:0;
+      background-image:linear-gradient(rgba(17,17,17,.035) 1px, transparent 1px),linear-gradient(90deg, rgba(17,17,17,.035) 1px, transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,.85), rgba(0,0,0,.12));
+    }
+
+    .progress{
+      position:fixed;top:0;left:0;height:4px;width:0%;z-index:9999;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--accent-3));
+      box-shadow:0 0 18px rgba(255,79,46,.4);
+    }
+
+    .orb{
+      position:fixed;width:360px;height:360px;border-radius:50%;z-index:0;pointer-events:none;
+      filter:blur(5px);opacity:.42;mix-blend-mode:multiply;
+      animation:float 10s ease-in-out infinite alternate;
+    }
+    .orb.one{left:-120px;top:160px;background:var(--accent-2)}
+    .orb.two{right:-140px;top:45vh;background:var(--accent-3);animation-delay:-3s}
+    .orb.three{left:55%;bottom:-170px;background:var(--accent);animation-delay:-5s}
+    @keyframes float{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(35px,-50px,0) scale(1.08)}}
+
+    a{color:inherit;text-decoration:none}
+    .page{position:relative;z-index:1}
+    .noise{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+    [contenteditable]:focus{outline:2px dashed var(--accent);outline-offset:5px;border-radius:8px}
+    [contenteditable]:hover{cursor:text}
+
+    .edit-badge{
+      position:fixed;right:24px;bottom:24px;z-index:999;background:var(--dark);color:var(--accent-2);
+      border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:11px 17px;font-size:12px;font-weight:800;
+      letter-spacing:.02em;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s ease;pointer-events:none
+    }
+    .edit-badge.show{opacity:1;transform:translateY(0)}
+
+    nav{
+      position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 32px));z-index:1000;
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+      padding:12px 14px 12px 18px;border:1px solid rgba(17,17,17,.12);border-radius:999px;
+      background:rgba(255,250,240,.72);backdrop-filter:blur(18px);box-shadow:0 16px 60px rgba(0,0,0,.08)
+    }
+    .nav-logo{font-family:var(--font-display);font-size:14px;font-weight:800;letter-spacing:-.03em;display:flex;align-items:center;gap:10px;white-space:nowrap}
+    .nav-logo::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:18px 0 0 var(--accent-2),36px 0 0 var(--accent-3)}
+    .nav-links{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-links a{font-size:12px;font-weight:800;color:rgba(17,17,17,.66);padding:10px 14px;border-radius:999px;transition:.2s ease}
+    .nav-links a:hover{background:var(--ink);color:var(--white);transform:translateY(-1px)}
+
+    .hero{
+      min-height:100vh;padding:132px clamp(20px,4vw,64px) 76px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:36px;align-items:end;
+    }
+    .hero-main{position:relative;min-height:680px;border:1px solid var(--line);border-radius:40px;padding:clamp(26px,5vw,64px);overflow:hidden;background:rgba(255,250,240,.58);box-shadow:var(--shadow)}
+    .hero-main::before{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(214,255,56,.95) 0 14%, transparent 28%),
+        radial-gradient(circle at 92% 76%, rgba(143,123,255,.55) 0 12%, transparent 28%),
+        linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,255,255,.18));
+    }
+    .hero-kicker{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;background:rgba(255,255,255,.52)}
+    .hero-kicker::before{content:"✦";color:var(--accent)}
+    h1{font-family:var(--font-display);font-size:clamp(4.2rem,11vw,12rem);line-height:.78;letter-spacing:-.09em;font-weight:700;margin:56px 0 34px;max-width:900px}
+    h1 .line2{display:block;transform:translateX(clamp(0px,4vw,60px));color:transparent;-webkit-text-stroke:2px var(--ink);text-shadow:12px 12px 0 rgba(255,79,46,.15)}
+    .hero-desc{font-size:clamp(1rem,1.4vw,1.28rem);max-width:660px;color:var(--muted);font-weight:560}
+    .hero-ribbon{position:absolute;right:-96px;top:80px;transform:rotate(16deg);font-family:var(--font-display);font-weight:800;font-size:22px;background:var(--dark);color:var(--white);padding:16px 110px;border-radius:999px;white-space:nowrap;box-shadow:0 18px 60px rgba(0,0,0,.18);animation:ribbon 4s ease-in-out infinite alternate}
+    @keyframes ribbon{to{transform:rotate(10deg) translateY(12px)}}
+    .hero-stamp{position:absolute;right:44px;bottom:48px;width:142px;height:142px;border-radius:50%;display:grid;place-items:center;background:var(--accent-2);font-family:var(--font-display);font-weight:800;text-align:center;line-height:1.05;letter-spacing:-.04em;box-shadow:0 20px 60px rgba(0,0,0,.12);animation:spinSlow 20s linear infinite}
+    @keyframes spinSlow{to{transform:rotate(360deg)}}
+
+    .hero-panel{align-self:stretch;border-radius:34px;background:var(--dark);color:var(--white);padding:26px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+    .hero-panel::before{content:"";position:absolute;inset:auto -50px -60px auto;width:210px;height:210px;border-radius:50%;background:var(--accent);filter:blur(2px);opacity:.9}
+    .panel-label{font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);margin-bottom:26px}
+    .meta{display:grid;gap:14px;position:relative;z-index:1}
+    .meta-item{border-top:1px solid rgba(255,255,255,.12);padding-top:14px}
+    .meta-item label{display:block;font-size:10px;font-weight:900;color:rgba(255,255,255,.38);letter-spacing:.16em;text-transform:uppercase;margin-bottom:5px}
+    .meta-item span{font-size:15px;font-weight:700;color:rgba(255,255,255,.92)}
+    .hero-cta{display:grid;gap:10px;position:relative;z-index:1;margin-top:30px}
+    .btn{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 18px;border-radius:18px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;transition:.22s ease;border:1px solid rgba(255,255,255,.18)}
+    .btn::after{content:"↗";font-size:16px}.btn:hover{transform:translateY(-3px)}
+    .btn-primary{background:var(--accent-2);color:var(--ink);border-color:transparent}.btn-ghost{color:var(--white);background:rgba(255,255,255,.06)}
+
+    .marquee-wrap{overflow:hidden;border-block:1px solid var(--line);background:var(--dark);color:var(--white);transform:rotate(-1.2deg) scale(1.03);margin:10px 0 22px}
+    .marquee-track{display:flex;width:max-content;animation:marquee 24s linear infinite}.marquee-track span{font-family:var(--font-display);font-size:clamp(2.1rem,5vw,5rem);font-weight:800;letter-spacing:-.06em;padding:22px 18px;white-space:nowrap}.marquee-track .dot{color:var(--accent-2)}.marquee-track span:nth-child(4n+1){color:var(--accent)}.marquee-track span:nth-child(4n+3){color:transparent;-webkit-text-stroke:1px var(--white)}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+
+    section,.closing{padding:96px clamp(20px,4vw,64px);position:relative}
+    .section-header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px}
+    .section-title{font-family:var(--font-display);font-size:clamp(2.3rem,6vw,6.5rem);line-height:.88;letter-spacing:-.08em;font-weight:700;max-width:860px}
+    .section-note{max-width:360px;color:var(--muted);font-size:14px;font-weight:600}
+
+    .learn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.learn-card,.mentor-card,.checkin-card,.commit-tile,.phase-row{will-change:transform,opacity}
+    .learn-card{min-height:330px;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:space-between;background:rgba(255,250,240,.76);box-shadow:0 16px 50px rgba(0,0,0,.06);transition:.25s ease;position:relative;overflow:hidden}
+    .learn-card::after{content:"";position:absolute;right:-32px;bottom:-32px;width:110px;height:110px;border-radius:50%;background:rgba(17,17,17,.08);transition:.25s ease}.learn-card:hover{transform:translateY(-9px) rotate(-1deg);box-shadow:var(--shadow)}.learn-card:hover::after{transform:scale(1.8)}
+    .learn-card:nth-child(1){background:var(--accent-2)}.learn-card:nth-child(2){background:#fff}.learn-card:nth-child(3){background:var(--accent)}.learn-card:nth-child(4){background:var(--accent-3);color:var(--white)}
+    .num{font-family:var(--font-display);font-size:12px;font-weight:900;letter-spacing:.16em;opacity:.55}.learn-card h3,.mentor-card h4,.checkin-card h4,.commit-tile h3{font-family:var(--font-display);font-size:clamp(1.15rem,1.8vw,1.8rem);line-height:1.05;letter-spacing:-.05em;font-weight:700;margin-bottom:12px}.learn-card p,.mentor-card p,.checkin-card p,.commit-tile p{font-size:14px;color:inherit;opacity:.68;font-weight:560}
+
+    .mentor-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.mentor-big{min-height:520px;border-radius:36px;background:var(--dark);color:var(--white);padding:clamp(30px,5vw,58px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .mentor-big::before{content:"MENTOR";position:absolute;left:-20px;bottom:-20px;font-family:var(--font-display);font-size:clamp(5rem,12vw,12rem);font-weight:800;letter-spacing:-.1em;color:rgba(255,255,255,.045)}
+    .mentor-big-quote{font-family:var(--font-display);font-size:clamp(2rem,4vw,4.5rem);line-height:.92;letter-spacing:-.08em;font-weight:700;color:var(--accent-2);position:relative;z-index:1}.mentor-big-body{max-width:520px;color:rgba(255,255,255,.68);font-size:16px;font-weight:560;position:relative;z-index:1}
+    .mentor-small-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mentor-card{border:1px solid var(--line);border-radius:26px;padding:26px;min-height:250px;background:rgba(255,250,240,.78);display:flex;flex-direction:column;justify-content:flex-end}.mentor-card:nth-child(2){background:var(--accent);color:var(--white)}.mentor-card:nth-child(3){background:var(--accent-2)}.mentor-card:nth-child(4){background:#fff}
+
+    .phases{display:grid;gap:18px}.phase-row{display:grid;grid-template-columns:320px 1fr;border:1px solid var(--line);border-radius:34px;overflow:hidden;background:rgba(255,250,240,.76);box-shadow:0 16px 55px rgba(0,0,0,.06)}
+    .phase-left{padding:30px;background:var(--dark);color:var(--white);display:flex;flex-direction:column;justify-content:space-between;min-height:320px}.phase-row:nth-child(2) .phase-left{background:var(--accent)}.phase-row:nth-child(3) .phase-left{background:var(--accent-2);color:var(--ink)}
+    .ph-num{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;opacity:.58;margin-bottom:18px}.ph-name{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,3.2rem);line-height:.95;letter-spacing:-.07em;font-weight:700}.ph-span{font-size:13px;opacity:.55}
+    .phase-right{padding:34px;display:grid;gap:18px}.ph-focus{display:inline-flex;width:max-content;background:var(--ink);color:var(--white);padding:8px 12px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.phase-right h4{font-family:var(--font-display);font-size:clamp(1.4rem,2.4vw,2.4rem);line-height:1;letter-spacing:-.06em;margin-bottom:14px}.phase-items{list-style:none;display:grid;gap:9px}.phase-items li{position:relative;padding:10px 12px 10px 34px;border-radius:14px;color:var(--muted);background:rgba(255,255,255,.45);font-size:14px;font-weight:600}.phase-items li::before{content:"→";position:absolute;left:13px;color:var(--accent);font-weight:900}.phase-items li.hl{color:var(--ink);background:rgba(214,255,56,.55)}.phase-kpis{display:flex;flex-wrap:wrap;gap:10px}.kpi-tag{font-size:12px;font-weight:900;background:var(--dark);color:var(--white);padding:8px 12px;border-radius:999px}
+
+    .checkin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.checkin-card{min-height:280px;border:1px solid var(--line);border-radius:28px;padding:26px;background:rgba(255,250,240,.78);display:flex;flex-direction:column;justify-content:space-between}.checkin-card:nth-child(1){background:var(--accent);color:var(--white)}.checkin-card:nth-child(4){background:var(--dark);color:var(--white)}.freq{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;opacity:.55}
+    .commit-layout{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.commit-tile{min-height:280px;border:1px solid var(--line);border-radius:28px;padding:26px;background:rgba(255,250,240,.78);display:flex;flex-direction:column;justify-content:flex-end}.commit-tile:nth-child(1){background:var(--accent-2)}.commit-tile:nth-child(4){background:var(--dark);color:var(--white)}
+
+    .closing{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:stretch}.closing-text{border-radius:40px;background:var(--dark);color:var(--white);padding:clamp(34px,5vw,62px);overflow:hidden;position:relative;min-height:470px;display:flex;flex-direction:column;justify-content:space-between}.closing-text::after{content:"";position:absolute;right:-80px;top:-90px;width:280px;height:280px;border-radius:50%;background:var(--accent);filter:blur(1px)}.closing-text h2{font-family:var(--font-display);font-size:clamp(3rem,7vw,7rem);line-height:.82;letter-spacing:-.09em;position:relative;z-index:1}.closing-text h2 em{font-style:normal;color:var(--accent-2)}.closing-text p{max-width:580px;color:rgba(255,255,255,.7);font-size:17px;font-weight:560;position:relative;z-index:1}.closing-card{border-radius:40px;background:var(--accent-2);padding:32px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--shadow)}.cc-label{font-size:11px;font-weight:900;letter-spacing:.17em;text-transform:uppercase;opacity:.55;margin-bottom:22px}.cc-name{font-family:var(--font-display);font-size:2.2rem;line-height:.95;letter-spacing:-.07em;font-weight:700;margin-bottom:10px}.cc-role{font-weight:700;color:rgba(17,17,17,.58);margin-bottom:26px}.cc-email{font-weight:900;border-bottom:2px solid var(--ink);width:max-content}
+    footer{padding:28px clamp(20px,4vw,64px);display:flex;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+
+    .music-player{position:fixed;left:22px;bottom:22px;z-index:999;display:flex;align-items:center;gap:10px;background:rgba(13,13,15,.88);color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:9px 13px 9px 9px;backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+    .music-btn{width:34px;height:34px;border:0;border-radius:50%;background:var(--accent-2);cursor:pointer;display:grid;place-items:center}.music-btn svg{width:15px;height:15px;fill:var(--ink)}.music-title{font-size:11px;font-weight:900}.music-sub{font-size:9px;opacity:.46;font-weight:800;letter-spacing:.12em}.music-bars{display:flex;align-items:flex-end;gap:2px;height:15px}.music-bars span{width:3px;border-radius:4px;background:var(--accent-2);animation:bar .75s ease-in-out infinite alternate}.music-bars span:nth-child(1){height:6px}.music-bars span:nth-child(2){height:13px;animation-delay:.15s}.music-bars span:nth-child(3){height:8px;animation-delay:.28s}.music-bars span:nth-child(4){height:15px;animation-delay:.08s}.music-bars span:nth-child(5){height:7px;animation-delay:.2s}.music-bars.paused span{animation-play-state:paused;height:4px!important}@keyframes bar{to{transform:scaleY(.45)}}.music-vol input{width:58px;accent-color:var(--accent-2)}
+
+    .reveal{opacity:0;transform:translateY(34px) scale(.98);transition:opacity .75s ease, transform .75s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:translateY(0) scale(1)}
+    .tilt{transform-style:preserve-3d;transition:transform .2s ease}
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+    .mindset-table{display:grid;grid-template-columns:1.05fr 1.25fr 1.55fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}
+    .mindset-cell{background:rgba(255,250,240,.82);padding:28px;min-height:210px}.mindset-head{background:var(--dark);color:var(--white);min-height:auto;font-weight:900;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.mindset-cell h3{font-family:var(--font-display);font-size:clamp(1.35rem,2.2vw,2.3rem);line-height:.98;letter-spacing:-.06em;margin-bottom:14px}.mindset-cell p,.mindset-cell li{font-size:14px;color:inherit;opacity:.72;font-weight:560}.mindset-cell ul{list-style:none;display:grid;gap:8px}.mindset-cell li{position:relative;padding-left:18px}.mindset-cell li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:900}.mindset-cell.leader{background:var(--accent-2)}.mindset-cell.old{background:#fff}.mindset-cell.criteria{background:var(--accent-3);color:var(--white)}
+    .phase-items li.outcome{margin-top:10px;background:var(--dark);color:var(--white);border-radius:14px;padding:12px 14px 12px 34px;font-weight:750;opacity:1}.phase-items li.outcome::before{left:14px;color:var(--accent-2)}
+    .phase-items li.warn{background:rgba(255,79,46,.12);color:var(--ink);border:1px solid rgba(255,79,46,.22);border-radius:12px;padding:9px 12px 9px 32px;opacity:1}.phase-items li.warn::before{content:'!';left:14px;color:var(--accent);font-weight:900}
+    .phase-items li.focus{background:rgba(214,255,56,.36);border-radius:12px;padding:8px 12px 8px 32px;opacity:1}.phase-items li.focus::before{left:14px}
+
+    @media (max-width:1050px){.hero{grid-template-columns:1fr}.hero-main{min-height:620px}.hero-panel{min-height:420px}.learn-grid,.checkin-grid,.commit-layout{grid-template-columns:1fr 1fr}.mindset-table{grid-template-columns:1fr}.mentor-layout{grid-template-columns:1fr}.closing{grid-template-columns:1fr}}
+    @media (max-width:700px){nav{top:10px;border-radius:24px;align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.nav-links a{padding:7px 9px}.hero{padding-top:150px}.hero-main{min-height:560px;border-radius:28px}.hero-ribbon,.hero-stamp{display:none}.learn-grid,.mentor-small-grid,.checkin-grid,.commit-layout{grid-template-columns:1fr}.phase-row{grid-template-columns:1fr}.phase-left{min-height:220px}.section-header{display:block}.section-note{margin-top:14px}.music-vol{display:none}footer{flex-direction:column;gap:8px}.closing-text,.closing-card{border-radius:28px}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" style="width: 65.8707%;"></div>
+  <div class="noise"></div>
+  <div class="orb one"></div><div class="orb two"></div><div class="orb three"></div>
+  <div class="edit-badge show" id="editBadge">Đang chỉnh sửa</div>
+
+  <div class="music-player" id="musicPlayer">
+    <button class="music-btn" id="musicBtn" title="Play / Pause" aria-label="Play / Pause">
+      <svg id="iconPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+      <svg id="iconPause" viewBox="0 0 24 24" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
+    </button>
+    <div class="music-info"><div class="music-title">Jazz Background</div><div class="music-sub">NHẠC NỀN · LOOP</div></div>
+    <div class="music-bars paused" id="musicBars"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="music-vol"><input type="range" id="volSlider" min="0" max="1" step="0.05" value="0.25" aria-label="Volume"></div>
+  </div>
+  <audio id="bgMusic" loop="" preload="none"><source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg"></audio>
+
+  <div class="page">
+    <nav>
+      <div class="nav-logo" contenteditable="true"><br></div>
+      <div class="nav-links">
+        <a href="file:///C:/Users/Windows%2010/Downloads/test/Proposal_Updated_Leader_Roadmap%20(1).html#mindset">Tư duy</a>
+        <a href="file:///C:/Users/Windows%2010/Downloads/test/Proposal_Updated_Leader_Roadmap%20(1).html#mentor">Mentor</a>
+        <a href="file:///C:/Users/Windows%2010/Downloads/test/Proposal_Updated_Leader_Roadmap%20(1).html#roadmap">Lộ trình</a>
+        <a href="file:///C:/Users/Windows%2010/Downloads/test/Proposal_Updated_Leader_Roadmap%20(1).html#checkin">Trao đổi</a>
+        <a href="file:///C:/Users/Windows%2010/Downloads/test/Proposal_Updated_Leader_Roadmap%20(1).html#commit">Cam kết</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-main reveal tilt in" style="transition-delay: 0ms;">
+        <div class="hero-kicker" contenteditable="true">Proposal · Editor → mindset SX-KD</div>
+        <h1><span contenteditable="true">Đề xuất</span><br><span class="line2" contenteditable="true">Hợp tác</span></h1>
+        <p class="hero-desc" contenteditable="true"><br></p>
+        <div class="hero-ribbon" contenteditable="true">Research · System · Quality · Revenue</div>
+        <div class="hero-stamp" contenteditable="true">Mindset<br>Roadmap</div>
+      </div>
+
+      <aside class="hero-panel reveal in" style="transition-delay: 70ms;">
+        <div>
+          <div class="panel-label" contenteditable="true">Thông tin đề xuất</div>
+          <div class="meta">
+            <div class="meta-item"><label>Người đề xuất</label><span contenteditable="true">Nguyễn Trường Giang</span></div>
+            <div class="meta-item"><label>Vị trí hiện tại</label><span contenteditable="true">Video Editor</span></div>
+            <div class="meta-item"><label>Mục tiêu phát triển</label><span contenteditable="true">Tư duy Sản xuất - Kinh doanh</span></div>
+            <div class="meta-item"><label>Gửi đến</label><span contenteditable="true">Lê Phương Anh — Mentor</span></div>
+            <div class="meta-item"><label>Thời gian</label><span contenteditable="true">6/2026</span></div>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="file:///C:/Users/Windows%2010/Downloads/test/Proposal_Updated_Leader_Roadmap%20(1).html#mindset" class="btn btn-primary">Xem tư duy</a>
+          <a href="file:///C:/Users/Windows%2010/Downloads/test/Proposal_Updated_Leader_Roadmap%20(1).html#roadmap" class="btn btn-ghost">Xem lộ trình</a>
+        </div>
+      </aside>
+    </header>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span>EDITOR</span><span class="dot">✦</span><span>LEADER</span><span class="dot">✦</span><span>SYSTEM</span><span class="dot">✦</span><span>DATA</span><span class="dot">✦</span><span>QUALITY</span><span class="dot">✦</span><span>RISK</span><span class="dot">✦</span>
+        <span>EDITOR</span><span class="dot">✦</span><span>LEADER</span><span class="dot">✦</span><span>SYSTEM</span><span class="dot">✦</span><span>DATA</span><span class="dot">✦</span><span>QUALITY</span><span class="dot">✦</span><span>RISK</span><span class="dot">✦</span>
+      </div>
+    </div>
+
+    <section id="mindset">
+      <div class="section-header reveal in" style="transition-delay: 140ms;"><h2 class="section-title" contenteditable="true">01. Thước đo hiệu suất</h2><p class="section-note" contenteditable="true"><br></p></div>
+      <div class="mindset-table reveal in" style="transition-delay: 210ms;">
+        <div class="mindset-cell mindset-head">Tiêu chí</div>
+        <div class="mindset-cell mindset-head">Tư duy cũ · Editor</div>
+        <div class="mindset-cell mindset-head">Tư duy mới · Leader SX-KD</div>
+
+        <div class="mindset-cell criteria"><h3 contenteditable="true">Hiệu suất &amp; tư duy</h3><p contenteditable="true"><br></p></div>
+        <div class="mindset-cell old"><p contenteditable="true">Đảm bảo số lượng và chất lượng video đạt yêu cầu, đáp ứng quy trình phối hợp và quy chuẩn sản phẩm.</p></div>
+        <div class="mindset-cell leader"><ul>
+          <li contenteditable="true">Tư duy hệ thống: xây dựng và tối ưu quy trình build-up nội dung mới gồm ngách, nhân sự, chi phí và tài nguyên.</li>
+          <li contenteditable="true">Tư duy giải pháp: xử lý vấn đề công việc và con người bằng thống kê, phân tích, đánh giá dữ liệu sơ cấp và thứ cấp.</li>
+          <li contenteditable="true">Kỹ năng quản lý: xây dựng kế hoạch hành động theo mục tiêu nhóm/bộ phận, phân bổ nhân lực và tài nguyên hợp lý.</li>
+          <li contenteditable="true">Kỹ năng thống kê, lập báo cáo và trình bày kết quả dựa trên dữ liệu.</li>
+        </ul></div>
+
+        <div class="mindset-cell criteria"><h3 contenteditable="true">Góc nhìn dữ liệu</h3><p contenteditable="true"><br></p></div>
+        <div class="mindset-cell old"><p contenteditable="true">Tập trung phát triển kỹ năng hậu kỳ, nhịp dựng, âm thanh, hình ảnh và cảm nhận chất lượng sản phẩm.</p></div>
+        <div class="mindset-cell leader"><p contenteditable="true">Chú trọng quy trình, chất lượng sản phẩm và kết quả SX-KD: số lượng video, views, doanh thu, APV, CTR, retention và các tín hiệu tăng trưởng của kênh.</p></div>
+
+        <div class="mindset-cell criteria"><h3 contenteditable="true">Cách làm việc</h3><p contenteditable="true"><br></p></div>
+        <div class="mindset-cell old"><p contenteditable="true">Làm việc cá nhân theo khâu, tập trung hoàn thiện phần việc được giao.</p></div>
+        <div class="mindset-cell leader"><p contenteditable="true">Đóng gói quy trình, giao việc, kiểm soát chất lượng từng khâu và xử lý các vấn đề đội nhóm để kết quả cuối cùng là kết quả của cả team.</p></div>
+      </div>
+    </section>
+
+    <section id="learn">
+      <div class="section-header reveal in" style="transition-delay: 280ms;"><h2 class="section-title" contenteditable="true">02. Trọng tâm học</h2><p class="section-note" contenteditable="true"><br></p></div>
+      <div class="learn-grid">
+        <div class="learn-card reveal in" style="transition-delay: 0ms;"><div class="num">01</div><div><h3 contenteditable="true">Nghiên cứu thị trường<br>&amp; chọn ngách</h3><p contenteditable="true">Thống kê kênh cùng chủ đề, đánh giá lưu lượng views, độ cạnh tranh, RPM và khả năng sản xuất để xác định ngách khả thi.</p></div></div>
+        <div class="learn-card reveal in" style="transition-delay: 70ms;"><div class="num">02</div><div><h3 contenteditable="true">Kế hoạch SXND<br>&amp; hành động</h3><p contenteditable="true">Xây dựng kế hoạch sản xuất nội dung theo tháng/quý, bám sát mục tiêu số lượng, chất lượng, views và doanh thu.</p></div></div>
+        <div class="learn-card reveal in" style="transition-delay: 140ms;"><div class="num">03</div><div><h3 contenteditable="true">Đóng gói quy trình<br>&amp; quản lý chất lượng</h3><p contenteditable="true">Chuẩn hóa materials, template, font, âm thanh, nhịp cắt và quy chuẩn chất lượng để người khác có thể thực thi đúng 80% tiêu chuẩn.</p></div></div>
+        <div class="learn-card reveal in" style="transition-delay: 210ms;"><div class="num">04</div><div><h3 contenteditable="true">Quản trị rủi ro<br>&amp; doanh thu</h3><p contenteditable="true">Hiểu bản quyền, fair use, network/MCN, Adsense, affiliate, tài trợ, membership và cách tái đầu tư để scale.</p></div></div>
+      </div>
+    </section>
+
+    <section id="mentor">
+      <div class="section-header reveal in" style="transition-delay: 280ms;"><h2 class="section-title" contenteditable="true">03. Vai trò Mentor</h2><p class="section-note" contenteditable="true"><br></p></div>
+      <div class="mentor-layout">
+        <div class="mentor-big reveal in" style="transition-delay: 0ms;"><div class="mentor-big-quote" contenteditable="true">“ Học cách nghĩ như người chịu trách nhiệm cho kết quả của cả hệ thống.”</div><p class="mentor-big-body" contenteditable="true">Tôi mong được mentor phản biện trực tiếp về tính khả thi, cách lập kế hoạch, cách kiểm định chất lượng và cách ra quyết định dựa trên mục tiêu SX-KD thay vì chỉ dựa trên cảm nhận cá nhân.</p></div>
+        <div class="mentor-small-grid">
+          <div class="mentor-card reveal in" style="transition-delay: 70ms;"><h4 contenteditable="true">Phản biện chiến lược</h4><p contenteditable="true">Góp ý về ngách, tệp khán giả, content map, thời gian launching và tính khả thi sản xuất.</p></div>
+          <div class="mentor-card reveal in" style="transition-delay: 140ms;"><h4 contenteditable="true">Kiểm tra kế hoạch hành động</h4><p contenteditable="true">Review kế hoạch tháng/quý, cách phân bổ nguồn lực, chỉ số mục tiêu và cách theo dõi tiến độ.</p></div>
+          <div class="mentor-card reveal in" style="transition-delay: 210ms;"><h4 contenteditable="true">Định hướng đọc dữ liệu</h4><p contenteditable="true">Hướng dẫn cách nhìn retention, CTR, APV, views, doanh thu để tìm nguyên nhân trong từng khâu sản xuất.</p></div>
+          <div class="mentor-card reveal in" style="transition-delay: 280ms;"><h4 contenteditable="true">Đánh giá outcome</h4><p contenteditable="true">Cuối mỗi giai đoạn, cùng nhìn lại kết quả, thiếu sót và bài học có thể áp dụng ngược lại cho team.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="section-header reveal in" style="transition-delay: 0ms;"><h2 class="section-title" contenteditable="true">04. Lộ trình phát triển</h2><p class="section-note" contenteditable="true"><br></p></div>
+      <div class="phases">
+        <div class="phase-row reveal in" style="transition-delay: 70ms;"><div class="phase-left"><div><div class="ph-num" contenteditable="true">Giai đoạn 01</div><div class="ph-name" contenteditable="true">Lên kế hoạch &amp; định hướng</div></div><div class="ph-span" contenteditable="true">&nbsp;LM - KIẾN THỨC CHUNG</div></div><div class="phase-right"><div class="ph-focus" contenteditable="true">&nbsp;tư duy chiến lược</div><div><h4 contenteditable="true">Đánh giá tính khả thi sản xuất trước khi triển khai</h4><ul class="phase-items"><li class="hl" contenteditable="true">✦ Trực tiếp nghiên cứu thị trường: thống kê 15-20 kênh cùng chủ đề, không chỉ cùng ngách.</li><li contenteditable="true">Thu thập, thống kê và đánh giá dữ liệu về lưu lượng views, độ cạnh tranh, format nội dung, tệp khán giả và tín hiệu tăng trưởng.</li><li contenteditable="true">Từ chủ đề lớn, tìm ra ngách nhỏ có tiềm năng và đưa ra kết luận rõ về mức độ khả thi của ngách.</li><li contenteditable="true">Tính toán nguồn lực: một video thuộc ngách này mất bao lâu để hoàn thiện, cần bao nhiêu người, cần stock, AI voice, nhạc bản quyền hay công cụ nào.</li><li contenteditable="true">Đánh giá chi phí sản xuất có tối ưu so với tiềm năng doanh thu/RPM của ngách hay không.</li><li class="focus" contenteditable="true">Khi xây dựng brand, phải gắn với hành vi tệp khán giả mục tiêu trên YouTube: thumbnail + tiêu đề cần được nghĩ ngay từ khâu ý tưởng.</li><li class="outcome" contenteditable="true">OUTCOME:&nbsp;<div>01 bản kế hoạch gồm NCTT, kế hoạch SXND và thời gian launching cụ thể;&nbsp;</div><div>01 Content Map dài hạn cho 3 tháng đầu.</div></li></ul></div><div class="phase-kpis"><span class="kpi-tag" contenteditable="true">✔ NCTT 15-20 kênh</span><span class="kpi-tag" contenteditable="true">✔ Kế hoạch SXND</span><span class="kpi-tag" contenteditable="true">✔ Content map 3 tháng</span></div></div></div>
+
+        <div class="phase-row reveal in" style="transition-delay: 140ms;"><div class="phase-left"><div><div class="ph-num" contenteditable="true">Giai đoạn 02</div><div class="ph-name" contenteditable="true">Kế hoạch hành động &amp; SX-KD hiệu quả</div></div><div class="ph-span" contenteditable="true">&nbsp;LM - CONTENT - QLK</div></div><div class="phase-right"><div class="ph-focus" contenteditable="true">&nbsp;tổ chức để team làm tốt</div><div><h4 contenteditable="true">Xây dựng quy trình, duyệt chất lượng và đọc dữ liệu</h4><ul class="phase-items"><li class="warn" contenteditable="true">Khi quy trình gặp vấn đề, đầu ra chưa đạt chất lượng so với kì vọng</li><li contenteditable="true">Phụ trách một khâu nhỏ trong quy trình phối hợp và dành phần lớn thời gian để quan sát đối thủ, thị trường, duyệt đầu vào, đầu ra và đọc chỉ số trên kênh.</li><li class="hl" contenteditable="true">✦ Đóng gói bộ MATERIALS: template, bộ font, quy chuẩn âm thanh, nhịp cắt để Editor khác đọc vào có thể làm được 80% tiêu chuẩn.</li><li contenteditable="true">Tự xây dựng kế hoạch hành động đảm bảo hoạt động SX-KD đạt mục tiêu tháng/quý của team</li><li contenteditable="true">Kiểm định chất lượng SX-KD ở tất cả các khâu, bám sát mục tiêu: số lượng video cần sản xuất, views, doanh thu, APV, CTR.</li><li class="focus" contenteditable="true">Đọc Analytics theo nguyên nhân: retention tụt ở giây nào? Do nhịp dựng chậm, intro nhàm, kịch bản yếu hay packaging chưa đúng?</li><li contenteditable="true">Từ dữ liệu, quay lại điều chỉnh khâu tương ứng trong toàn bộ quy trình SX thay vì chỉ tìm cách xử lý ở khâu hậu kỳ.</li><li class="outcome" contenteditable="true">OUTCOME:&nbsp;<div>01 Quy trình SXND;&nbsp;</div><div>01 Quy chuẩn Chất lượng SP;&nbsp;</div><div>01 Kế hoạch SX-ND cho team nếu có.</div></li></ul></div><div class="phase-kpis"><span class="kpi-tag" contenteditable="true">✔ Bộ materials</span><span class="kpi-tag" contenteditable="true">✔ Quy trình SXND</span><span class="kpi-tag" contenteditable="true">✔ QC &amp; Analytics</span></div></div></div>
+
+        <div class="phase-row reveal in" style="transition-delay: 210ms;"><div class="phase-left"><div><div class="ph-num" contenteditable="true">Giai đoạn 03</div><div class="ph-name" contenteditable="true">Quản trị rủi ro</div></div><div class="ph-span" contenteditable="true"><br></div></div><div class="phase-right"><div class="ph-focus" contenteditable="true">Hiểu rõ về luật chơi nền tảng</div><div><h4 contenteditable="true">Bản quyền, doanh thu, tái đầu tư và bảo mật</h4><ul class="phase-items"><li class="hl" contenteditable="true">✦ Quản trị rủi ro hệ thống: hiểu luật chơi của nền tảng, bản quyền và các tình huống có thể ảnh hưởng trực tiếp đến kênh.</li><li contenteditable="true">Học cách xử lý thực tế với Copyright Strike/Claim, tư duy Fair Use, quy trình làm việc với Network/MCN.</li><li contenteditable="true">Tối ưu hóa doanh thu ngoài Adsense: Affiliate, quảng cáo nhãn hàng, Membership và các nguồn doanh thu phù hợp với định hướng kênh.</li><li class="focus" contenteditable="true">Bài toán tái đầu tư: doanh thu nên đổ vào đâu trước — tuyển thêm người viết kịch bản, mua tài khoản AI, mua stock/nhạc bản quyền hay nâng cấp máy móc?</li><li contenteditable="true">Bài toán bảo mật thông tin và nhân sự: mọi nội dung triển khai phải đảm bảo trách nhiệm với doanh nghiệp theo thỏa thuận trong HĐLĐ.</li><li contenteditable="true">Mọi quyết định quan trọng cần được bàn bạc, thống nhất, có người giao việc, có người thực thi và có người chịu trách nhiệm theo dõi kết quả.</li><li class="outcome" contenteditable="true">OUTCOME:&nbsp;<div>01 khung quản trị rủi ro gồm bản quyền, nền tảng, doanh thu, tái đầu tư, bảo mật thông tin và trách nhiệm nhân sự.</div></li></ul></div><div class="phase-kpis"><span class="kpi-tag" contenteditable="true">🏆 Copyright/Fair Use</span><span class="kpi-tag" contenteditable="true">🏆 Revenue Mix</span><span class="kpi-tag" contenteditable="true">🏆 Risk Framework</span></div></div></div>
+      </div>
+    </section>
+
+    <section id="checkin">
+      <div class="section-header reveal in" style="transition-delay: 280ms;"><h2 class="section-title" contenteditable="true">05. Kế hoạch trao đổi</h2><p class="section-note" contenteditable="true"><br></p></div>
+      <div class="checkin-grid">
+        <div class="checkin-card reveal in" style="transition-delay: 0ms;"><div class="freq" contenteditable="true">Đầu giai đoạn · ~45 phút</div><div><h4 contenteditable="true">Review định hướng</h4><p contenteditable="true">Trình bày mục tiêu, ngách, kế hoạch, nguồn lực và rủi ro chính để mentor phản biện trước khi triển khai.</p></div></div>
+        <div class="checkin-card reveal in" style="transition-delay: 70ms;"><div class="freq" contenteditable="true">Hàng tháng · ~20 phút</div><div><h4 contenteditable="true">Check-in chỉ số</h4><p contenteditable="true">Cập nhật số lượng sản xuất, views, CTR, APV, retention, doanh thu và điểm nghẽn trong quy trình.</p></div></div>
+        <div class="checkin-card reveal in" style="transition-delay: 140ms;"><div class="freq" contenteditable="true">Khi có quyết định lớn</div><div><h4 contenteditable="true">Hỏi nhanh có cấu trúc</h4><p contenteditable="true">Tóm tắt bối cảnh, dữ liệu đang có, phương án đề xuất và câu hỏi cần mentor góp ý.</p></div></div>
+        <div class="checkin-card reveal in" style="transition-delay: 210ms;"><div class="freq" contenteditable="true">Cuối giai đoạn · ~1 tiếng</div><div><h4 contenteditable="true">Tổng kết outcome</h4><p contenteditable="true">Đánh giá deliverable, việc đã học được, phần áp dụng lại cho team và điều chỉnh cho giai đoạn tiếp theo.</p></div></div>
+      </div>
+    </section>
+
+    <section id="commit">
+      <div class="section-header reveal in" style="transition-delay: 280ms;"><h2 class="section-title" contenteditable="true">06. Cam kết cá nhân</h2><p class="section-note" contenteditable="true"><br></p></div>
+      <div class="commit-layout">
+        <div class="commit-tile reveal in" style="transition-delay: 0ms;"><h3 contenteditable="true">Không xao nhãng hậu kỳ hiện tại</h3><p contenteditable="true">Việc tham gia mentor và phát triển dự án cá nhân không làm ảnh hưởng deliverable hiện tại; công việc hậu kỳ của team vẫn là ưu tiên bắt buộc.</p></div>
+        <div class="commit-tile reveal in" style="transition-delay: 70ms;"><h3 contenteditable="true">Áp dụng tư duy hệ thống cho team</h3><p contenteditable="true">Những gì học được sẽ được áp dụng ngay để tối ưu hiệu suất của các bạn trong team: quy trình, tiêu chuẩn, materials, cách duyệt và báo cáo.</p></div>
+        <div class="commit-tile reveal in" style="transition-delay: 140ms;"><h3 contenteditable="true">Bảo mật &amp; trách nhiệm với doanh nghiệp</h3><p contenteditable="true">Không sử dụng hoặc tiết lộ thương hiệu, quy trình, dữ liệu, tài nguyên hay thông tin nội bộ trái với cam kết và thỏa thuận trong HĐLĐ.</p></div>
+        <div class="commit-tile reveal in" style="transition-delay: 210ms;"><h3 contenteditable="true">Đánh giá kết quả</h3><p contenteditable="true">Mọi quyết định cần được bàn bạc, thống nhất, có người giao việc và có người thực thi. Học thêm về OKRs, lãnh đạo bản thân và mindset quản lý cơ bản.</p></div>
+      </div>
+    </section>
+
+    <div class="closing" id="contact">
+      <div class="closing-text reveal in" style="transition-delay: 280ms;"><h2><span contenteditable="true">07. Tổng kết</span><br><em contenteditable="true"></em></h2><p contenteditable="true">Em cảm ơn chị đã góp ý và bổ sung các phần quan trọng. Bản cập nhật này tập trung làm rõ tư duy chuyển đổi, deliverable từng giai đoạn và trách nhiệm của em với team/doanh nghiệp trong quá trình học và triển khai.</p></div>
+      <div class="closing-card reveal in" style="transition-delay: 0ms;"><div class="cc-label" contenteditable="true">Liên hệ</div><div class="cc-name" contenteditable="true">Giang Nguyễn</div><div class="cc-role" contenteditable="true">Video Editor · Life Media</div><a class="cc-email" href="mailto:giangnguyenn2412@gmail.com" contenteditable="true">giangnguyenn2412@gmail.com</a></div>
+    </div>
+
+    <footer><span contenteditable="true">Proposal · Editor&nbsp; Roadmap</span><span contenteditable="true">Life Media</span></footer>
+  </div>
+
+  <script>
+    const badge = document.getElementById('editBadge');
+    let hideTimer;
+    document.querySelectorAll('[contenteditable]').forEach(el=>{
+      el.addEventListener('focus',()=>{clearTimeout(hideTimer);badge.classList.add('show')});
+      el.addEventListener('blur',()=>{hideTimer=setTimeout(()=>badge.classList.remove('show'),1100)});
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const target=document.querySelector(a.getAttribute('href'));
+        if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+      });
+    });
+
+    const progress=document.getElementById('progress');
+    const setProgress=()=>{
+      const max=document.documentElement.scrollHeight-window.innerHeight;
+      progress.style.width=max>0?`${(window.scrollY/max)*100}%`:'0%';
+    };
+    window.addEventListener('scroll',setProgress,{passive:true});setProgress();
+
+    const reveals=document.querySelectorAll('.reveal');
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');io.unobserve(entry.target);}});
+    },{threshold:.16,rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach((el,i)=>{el.style.transitionDelay=`${Math.min(i%5*70,280)}ms`;io.observe(el)});
+
+    document.querySelectorAll('.tilt').forEach(card=>{
+      card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5; const y=(e.clientY-r.top)/r.height-.5;
+        card.style.transform=`rotateX(${-y*5}deg) rotateY(${x*5}deg)`;
+      });
+      card.addEventListener('mouseleave',()=>card.style.transform='');
+    });
+
+    const audio=document.getElementById('bgMusic');
+    const btn=document.getElementById('musicBtn');
+    const bars=document.getElementById('musicBars');
+    const iconPlay=document.getElementById('iconPlay');
+    const iconPause=document.getElementById('iconPause');
+    const vol=document.getElementById('volSlider');
+    audio.volume=parseFloat(vol.value);
+    let playing=false;
+    btn.addEventListener('click',()=>{
+      if(!playing){
+        audio.play().then(()=>{playing=true;iconPlay.style.display='none';iconPause.style.display='';bars.classList.remove('paused')}).catch(()=>{});
+      }else{audio.pause();playing=false;iconPlay.style.display='';iconPause.style.display='none';bars.classList.add('paused')}
+    });
+    vol.addEventListener('input',()=>audio.volume=parseFloat(vol.value));
+  </script>
+
+
+</body></html>
